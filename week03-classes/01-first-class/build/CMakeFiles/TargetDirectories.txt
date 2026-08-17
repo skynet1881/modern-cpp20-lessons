@@ -1,3 +1,0 @@
-/home/snke/code/modern-cpp20-lessons/week03-classes/01-first-class/build/CMakeFiles/first_class.dir
-/home/snke/code/modern-cpp20-lessons/week03-classes/01-first-class/build/CMakeFiles/edit_cache.dir
-/home/snke/code/modern-cpp20-lessons/week03-classes/01-first-class/build/CMakeFiles/rebuild_cache.dir

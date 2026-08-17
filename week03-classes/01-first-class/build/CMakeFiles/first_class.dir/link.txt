@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/first_class.dir/main.cpp.o CMakeFiles/first_class.dir/src/led.cpp.o -o first_class 

@@ -7,23 +7,23 @@ struct Player
     int health;
 };
 
-void print_player(const Player* player)
+void print_player(const Player *player)
 {
     if (player == nullptr)
     {
-        std::cout << "No player selected\n";
+        std::cout << "No player selected \n";
         return;
     }
 
-    std::cout
-        << "Name: " << player->name << '\n'
-        << "Health: " << player->health << '\n';
+    std::cout << "Name: " << player->name << "\n"
+              << "Health: " << player->health << "\n";
 }
 
-void take_damage(Player* player, int damage)
+void take_damage(Player *player, int damage)
 {
     if (player == nullptr)
     {
+        std::cout << "No player selected \n";
         return;
     }
 
@@ -44,7 +44,7 @@ int main()
 
     Player* selected_player = &alice;
 
-    std::cout << "Object address:  "
+        std::cout << "Object address:  "
               << &alice
               << '\n';
 
@@ -57,12 +57,12 @@ int main()
 
     take_damage(selected_player, 30);
 
-    std::cout << "\nAfter damage\n";
+    std::cout << "After damage \n";
     print_player(selected_player);
 
     selected_player = nullptr;
 
-    std::cout << "\nAfter clearing selection\n";
+    std::cout << "Clear player selection \n";
     print_player(selected_player);
 
     return 0;

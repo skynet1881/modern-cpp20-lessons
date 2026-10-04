@@ -25,9 +25,9 @@ void add_score(Player& player, int amount)
     player.score += amount;
 }
 
-void take_damage(Player& player, int amount)
+void take_damage(Player& player, int damage)
 {
-    player.health -= amount;
+    player.health -= damage;
 
     if (player.health < 0)
     {
@@ -35,9 +35,9 @@ void take_damage(Player& player, int amount)
     }
 }
 
-void simulate_damage(Player player, int amount)
+void simulate_damage(Player player, int damage)
 {
-    player.health -= amount;
+    player.health -= damage;
 
     std::cout
         << "Simulation: "
@@ -47,24 +47,18 @@ void simulate_damage(Player player, int amount)
         << " health\n";
 }
 
-Player* find_player(
-    std::vector<Player>& players,
-    const std::string& name)
+Player* find_player(std::vector<Player>& players, const std::string& name)
 {
     for (Player& player : players)
     {
         if (player.name == name)
-        {
             return &player;
-        }
     }
 
     return nullptr;
 }
 
-const Player* find_player(
-    const std::vector<Player>& players,
-    const std::string& name)
+const Player* find_player(const std::vector<Player>& players, const std::string& name)
 {
     for (const Player& player : players)
     {
@@ -97,50 +91,22 @@ int main()
         }
     };
 
-    std::cout << "Initial players\n";
-
+    std::cout << "Initial player \n";
     for (const Player& player : players)
     {
         print_player(player);
     }
 
-    std::cout << "\nSearching for Alice...\n";
-
-    Player* alice = find_player(players, "Alice");
-
-    if (alice != nullptr)
-    {
-        add_score(*alice, 50);
-        take_damage(*alice, 20);
-
-        std::cout << "Alice updated\n";
-        print_player(*alice);
-    }
-
-    std::cout << "\nPass-by-value simulation\n";
+    std::cout << "\n Search for Alice.. \n";
+    Player *alice = find_player(players, "Alice");
 
     if (alice != nullptr)
     {
-        simulate_damage(*alice, 50);
+        add_score(*alice, 20);
+        take_damage(*alice, 30);
 
-        std::cout << "Actual object after simulation\n";
+        std::cout << "Alice update \n";
         print_player(*alice);
-    }
-
-    std::cout << "\nSearching for Dave...\n";
-
-    Player* dave = find_player(players, "Dave");
-
-    if (dave == nullptr)
-    {
-        std::cout << "Dave was not found\n";
-    }
-
-    std::cout << "\nFinal players\n";
-
-    for (const Player& player : players)
-    {
-        print_player(player);
     }
 
     return 0;

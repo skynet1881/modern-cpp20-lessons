@@ -7,7 +7,8 @@ struct Player
     int health;
 };
 
-void take_damage(Player player, int damage)
+// call by reference
+void take_damage(Player &player, int damage)
 {
     std::cout << "\nInside take_damage()\n";
     std::cout << "Address: " << &player << '\n';

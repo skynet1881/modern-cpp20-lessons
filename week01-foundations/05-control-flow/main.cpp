@@ -20,15 +20,13 @@ int main()
 
     for (const auto stock : stock_levels)
     {
-        std::cout << "Product "
-                  << product_id
-                  << ": ";
-
+        std::cout << "Product " << product_id << ": ";
+    
         if (stock == 0)
         {
             std::cout << "OUT OF STOCK";
         }
-        else if (stock <= low_stock_threshold)
+        else if (stock < low_stock_threshold)
         {
             std::cout << "LOW STOCK";
         }
@@ -36,10 +34,9 @@ int main()
         {
             std::cout << "OK";
         }
+        std::cout << "(" << stock << " Units)\n";
 
-        std::cout << " (" << stock << " units)\n";
-
-        ++product_id;
+        product_id++;
     }
 
     std::cout << "\nChoose action:\n";
@@ -57,7 +54,7 @@ int main()
             std::cout << "Creating reorder report...\n";
             break;
 
-        case 2:
+        case 2: 
             std::cout << "Displaying inventory...\n";
             break;
 
@@ -70,5 +67,5 @@ int main()
             break;
     }
 
-    return 0;
+    return 0;   
 }

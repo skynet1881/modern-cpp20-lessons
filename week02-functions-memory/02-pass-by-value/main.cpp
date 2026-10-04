@@ -7,6 +7,7 @@ struct Player
     int health;
 };
 
+// call by value
 void take_damage(Player player, int damage)
 {
     std::cout << "\nInside take_damage()\n";
@@ -22,7 +23,7 @@ void take_damage(Player player, int damage)
 
 int main()
 {
-    Player player{
+    Player player = {
         .name = "Alice",
         .health = 100
     };
@@ -31,9 +32,10 @@ int main()
     std::cout << "Address: " << &player << '\n';
     std::cout << "Health: " << player.health << '\n';
 
+    // function call#
     take_damage(player, 25);
 
-    std::cout << "\nAfter function call\n";
+    std::cout << "After function call\n";
     std::cout << "Address: " << &player << '\n';
     std::cout << "Health: " << player.health << '\n';
 
